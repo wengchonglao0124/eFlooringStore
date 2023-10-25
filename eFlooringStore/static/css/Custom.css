@@ -1,0 +1,80 @@
+
+.logo-rcorner {
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+
+.dropdown-extender {
+    color: white;
+    opacity: 0;
+}
+
+
+.dropdown-extender:hover {
+    color: white;
+    background-color: white;
+    opacity: 0;
+}
+
+
+.cart-image {
+    margin-left: 20px;
+}
+
+
+.home-jumbotron {
+    background-image: url("../images/home_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 0rem;
+}
+
+
+.jumbotron-bg {
+    background-color: #F6F6F5;
+    opacity: 0.8;
+    border-radius: 20px;
+    padding: 5%;
+}
+
+
+main {
+    background-color: #F6F6F5;
+}
+
+
+.section-title {
+    padding-top: 10px;
+}
+
+
+.line-image {
+    margin-top: 15px;
+}
+
+
+.section-title {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+footer {
+    background-color: #F7F3EC;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
+.subpage-top {
+    margin-top: 50px;
+    padding-top: 50px;
+}
+
+
+.zoom:hover {
+    transform: scale(1.05);
+  }

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+ <!-- Special Discount Section -->
+ <section class="subpage-top" id="specialDiscount">
+    <div class="container text-center">
+        <div class="row justify-content-center section-area mb-5">
+            <img src="{{url_for('static', filename='images/line.png')}}" width="100" height="30" class="d-inline-block align-top line-image" alt="Line Image">
+            <h2 class="section-title">Special Discount</h2>
+            <img src="{{url_for('static', filename='images/line.png')}}" width="100" height="30" class="d-inline-block align-top line-image" alt="Line Image">
+        </div>
+        
+        <!-- Cards -->
+        <div class="row text-center">
+
+            {% for special_discount_flooring in special_discount_floorings%}
+            <div class="col-md-12 col-lg-4 text-center mb-5">
+                <a class="pe-auto text-decoration-none" href="{{url_for('main.details', flooring_id=special_discount_flooring.id)}}">
+                    <div class="card zoom ml-auto mr-auto" style="width: 18rem;">
+                        <img src="{{url_for('static', filename='images/product_images/'+special_discount_flooring.image)}}" class="card-img-top" alt="{{ special_discount_flooring.type }} Flooring Image">
+                        <div class="text-center alert 
+                        {% if special_discount_flooring.discount <= 0.7 %} alert-danger 
+                        {% elif special_discount_flooring.discount > 0.8 %} alert-success 
+                        {% else %} alert-warning
+                        {% endif %}" role="alert">
+                            <b>{{"%.2f"|format(100 - special_discount_flooring.discount * 100)}}</b>% Off - Check It Out!
+                        </div>
+                        <div class="card-body container">
+                            <div class="row pl-2 text-secondary">
+                                {{ special_discount_flooring.subtype }} - {{ special_discount_flooring.colour }}
+                            </div>
+                            <div class="row pl-2 text-secondary">
+                                {{ special_discount_flooring.specification.size }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
