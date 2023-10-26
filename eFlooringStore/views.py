@@ -230,7 +230,7 @@ def deleteorder():
     if 'order_id' in session:
         del session['order_id']
         flash('All items deleted')
-    return redirect(url_for('main.index'))
+    return redirect(url_for('main.shoppingcart'))
 
 
 def updateTotalPrice():
@@ -280,7 +280,7 @@ def checkout():
             try:
                 db.session.commit()
                 del session['order_id']
-                flash('Thank you for your order! Your order is now being processed! You will receive the email notification for any update.')
+                flash(f'Thank you for your order! {customer.firstname}, your order is now being processed! You will receive the email notification for any update.')
                 return redirect(url_for('main.shoppingcart'))
             except:
                 flash('There was an issue completing your order')

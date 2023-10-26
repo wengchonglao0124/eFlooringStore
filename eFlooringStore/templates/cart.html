@@ -68,6 +68,14 @@
                 </div>
             </div>
             <div class="row justify-content-between mt-4">
+                <div class="col-3 cart-image">
+                    <a href="{{url_for('main.deleteorder')}}">
+                        <button type="button" class="btn btn-secondary">
+                            Remove_All
+                        </button>
+                    </a>
+                </div>
+
                 <div class="col cart-image">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#purchaseModal">
