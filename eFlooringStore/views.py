@@ -31,7 +31,10 @@ def search():
 
     products = query1.union(query2, query3, query4, query5).all()
 
-    return render_template('search.html', floorings=products, keyword=search)
+    order = getOrder()
+    orderdetails = db.session.scalars(db.select(OrderDetail).where(OrderDetail.order==order).order_by(OrderDetail.quantity.desc())).all()
+
+    return render_template('search.html', floorings=products, keyword=search, orderdetails = orderdetails)
 
 
 @bp.route('/floorings')
